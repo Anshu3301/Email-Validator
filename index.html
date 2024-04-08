@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Validator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="outer">
+        <h2>OTP VALIDATOR</h2>
+        <input type="email" id="mail" placeholder=" Enter email...">
+        <div id="validate">
+            <input type="text" id="otp" placeholder=" Enter OTP">
+            <button id="verify" type="button">Verify</button>
+        </div>
+        <p id="resend"></p>
+        <button id="send">Send OTP</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+</body>
+</html>
