@@ -1,5 +1,5 @@
 # Email-Validator
-Email Validation using OTP...
+Email Validation using OTP. Used smtpJS (i.e. a free JS Library) for sending Emails.
 
 Video Description:
 
