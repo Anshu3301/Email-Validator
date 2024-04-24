@@ -4,12 +4,11 @@ let resend = document.querySelector("#resend");
 let verify = document.querySelector("#verify");
 let otp = document.querySelector("#otp");
 let validateButton = document.querySelector("#validate");
-let generatedOTP;
-let interval;
+let generatedOTP,interval;
 let i = 59;
 
+// Generating & sending OTP
 function sendOTP(mail_id) {
-    // Generating & sending OTP
     let num = '';
     for (let j = 0; j < 6; j++) {
         num = num + `${Math.floor(((Math.random()) * 10))}`;
@@ -18,6 +17,7 @@ function sendOTP(mail_id) {
         }
     }
 
+    //smtpJS
     Email.send({
         Host: "smtp.elasticemail.com",
         Username: "sainjack46@gmail.com",
@@ -28,16 +28,15 @@ function sendOTP(mail_id) {
         Body: `Your One Time Password(OTP) is: ${num}. Don't share this with anyone. Thank You!`
     })
         .then(() => {
-            console.log(num);
+            console.log(num); 
         })
         .catch((err) => console.log(err));
 
     return num;
 }
 
-
+// Count-down for Resend
 function countdown() {
-    // Count-down for Resend
     interval = setInterval(() => {
         document.querySelector("#resend_in").innerHTML = `${i}`;
         i--;
